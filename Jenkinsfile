@@ -36,7 +36,6 @@ pipeline {
           kubernetesDeploy(configs: "hellowhale.yml", kubeconfigId: "mykubeconfig")
         }
       }
-    }
 
   }
 
