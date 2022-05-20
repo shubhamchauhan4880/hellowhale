@@ -33,7 +33,9 @@ pipeline {
     stage('Deploy App') {
       steps {
         script {
-          kubernetesDeploy(configs: "hellowhale.yml", kubeconfigId: "mykubeconfig")
+          withKubeConfig(caCertificate: '', clusterName: ' clutser-info', contextName: '', credentialsId: 'mykubeconfig', namespace: '', serverUrl: ' https://192.168.49.2:8443') {
+                             sh 'kubectl apply -f hellowhale.yml'
+}
         }
       }
 
