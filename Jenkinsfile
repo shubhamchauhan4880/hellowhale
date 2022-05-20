@@ -35,6 +35,7 @@ pipeline {
         script {
           
              kubernetesDeploy(configs: "hellowhale.yml", kubeconfigId: "mykubeconfigg")
+        }
           
 }
         }
